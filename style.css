@@ -1,0 +1,66 @@
+/* toolbar */
+div.css-14xtw13.e8zbici0 {
+    background-color: #05830cbb;
+    border: 1px solid #000000;
+    border-radius: 10px;
+}
+
+/* main body */
+div.appview-container.css-1wrcr25.egzxvld4 {
+    background-color: #ffffff;
+}
+
+/* exit left tab button */
+button.css-9s5bis.edgvbvh3 {
+    background-color: #05830cbb;
+    border: 1px solid #000000;
+    border-radius: 10px;
+}
+button.css-9s5bis.edgvbvh3:hover{
+    background-color: #066d86c4;
+    color: #000000;
+}
+
+
+/* centering header & subheaders*/
+div.css-zt5igj.e16nr0p32 {
+    text-align: center;
+}
+
+label.css-qrbaxs.effi0qh3{
+    text-emphasis-color: green;
+    text-size-adjust: 20;
+}
+
+
+
+/* city // furnishings button */
+div.st-av.st-aw.st-ax.st-ay.st-bb.st-bd.st-b7.st-b4.st-b5.st-be.st-bf.st-bg.st-bh.st-bi.st-bj.st-bk.st-bl.st-bm.st-bn.st-b2.st-bo.st-bp.st-dg.st-dh.st-di.st-dj.st-da {
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 10px;
+}
+
+/*Editing  calculate button*/
+button.css-1cpxqw2.edgvbvh9 {
+    background-color: #05830cbb;
+    border: 1px solid #000000;
+    float: right;
+}
+/*Calculate button hover*/
+button.css-1cpxqw2.edgvbvh9:hover {
+    background-color: #066d86c4;
+    color: #000000;
+    border: 1px solid #000000;
+}
+
+
+/*input box borders*/
+div.st-av.st-aw.st-ax.st-ay.st-bb.st-bd.st-b7.st-b4.st-b5.st-be.st-bf.st-bg.st-bh.st-bi.st-bj.st-bk.st-bl.st-bm.st-bn.st-b2.st-bo.st-bp.st-d6.st-d7.st-d8.st-d9.st-da {
+    border: 1px solid #000000;
+    border-radius: 10px;
+}
+div.st-av.st-aw.st-ax.st-ay.st-bb.st-bd.st-b7.st-b4.st-b5.st-be.st-bf.st-bg.st-bh.st-bi.st-bj.st-bk.st-bl.st-bm.st-bn.st-b2.st-bo.st-bp.st-bq.st-br.st-bs.st-bt.st-bu {
+    border: 1px solid #000000;
+    border-radius: 10px;
+}

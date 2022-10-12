@@ -4,9 +4,9 @@ import numpy as np
 
 
 def show_prediction_page():
-    st.title('India Apartment & Home Rent Prediction')
+    st.write("""## India Apartment & Home Rent Prediction""")
 
-    st.write("""### Plug in information to predict Rent""")
+    st.write("""#### Calculate My Rent: """)
 
     def load_model():
         with open(r'OneDrive/Desktop/ADS505/model_labelencode.pkl', 'rb') as file:
@@ -49,13 +49,15 @@ def show_prediction_page():
         'Unfurnished', 
         'Furnished', 
     )
+    with open('c:/Users/whitm/OneDrive/Documents/GitHub/Rent_Prediction\style.css') as f:
+        st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
-    city = st.selectbox('City', cities)
-    furnishs = st.selectbox('Furnishings', furnish)
+    city = st.selectbox('Select Your Preferred City', cities)
+    furnishs = st.selectbox('Select If You will Furnish Yourself', furnish)
 
-    size = st.slider('Square Feet', min_value= 10, max_value = 10000)
+    size = st.slider('Select Preferred Size in Square Feet', min_value= 10, max_value = 10000)
     #floor = st.slider('Floor On', min_value = -2, max_value = 150)
-    bathroom = st.slider('Bathrooms', min_value = 1, max_value = 10)
+    bathroom = st.slider('Select Preferred Bathroom Amount', min_value = 1, max_value = 10)
 
     ok = st.button('Calculate Rent')
     if ok:
@@ -65,4 +67,4 @@ def show_prediction_page():
         X = X.astype(float)
 
         rent = regressor.predict(X)
-        st.subheader(f"The estimated rent is ₹{rent[0]:.2f}")
+        st.write(f"#### The estimated rent is ₹{rent[0]:.2f}")
