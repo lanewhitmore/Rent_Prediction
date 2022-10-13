@@ -40,9 +40,6 @@ def show_prediction_page():
         'Contact Builder',
     )
 
-    
-    with open('style.css') as f:
-        st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
     ### Creating selectors and sliders
     city = st.selectbox('Select Your Preferred City', cities)
