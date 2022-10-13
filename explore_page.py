@@ -62,16 +62,26 @@ def show_explore_page():
     st.bar_chart(data2)
 
     st.write("""#### Average Cost of Rent by Bathroom Count""")
-    st.bar_chart(data4)
+    chart = (
+        alt.Chart(df)
+        .mark_bar()
+        .encode(
+            alt.X("Bathroom:O"),
+            alt.Y(("Rent").mean()),
+            alt.Color("Bathroom:0"),
+            alt.Tooltip(["BHK", "Rent"]),
+        )
+        .interactive()
+    )
 
     st.write("""#### Average Cost of Rent by Bedroom + Kitchen + Hall Count""")
     chart = (
         alt.Chart(df)
         .mark_bar()
         .encode(
-            alt.X("BHK"),
+            alt.X("BHK:O"),
             alt.Y("Rent"),
-            alt.Color("BHK"),
+            alt.Color("BHK:0"),
             alt.Tooltip(["BHK", "Rent"]),
         )
         .interactive()
