@@ -81,7 +81,7 @@ def show_explore_page():
         .encode(
             alt.X("BHK"),
             alt.Y("Rent"),
-            alt.Color("BHK"),
+            alt.Color("BHK", scale=alt.Scale(scheme='dark2')),
             alt.Tooltip(["BHK", "Rent"]),
         )
         .interactive()
