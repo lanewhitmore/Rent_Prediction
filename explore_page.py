@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import altair as alt
 
 ## formulas from nb
 def clean_flooron(x):
@@ -64,7 +65,18 @@ def show_explore_page():
     st.bar_chart(data4)
 
     st.write("""#### Average Cost of Rent by Bedroom + Kitchen + Hall Count""")
-    st.bar_chart(data5, c = 'green')
+    chart = (
+        alt.Chart(data5)
+        .mark_bar()
+        .encode(
+            alt.X("Nucleotide:O"),
+            alt.Y("Similarities"),
+            alt.Color("Nucleotide:O"),
+            alt.Tooltip(["Nucleotide", "Similarities"]),
+        )
+        .interactive()
+    )
+    st.altair_chart(chart)
 
     st.write("""#### Listings By Date in 2022""")
     st.line_chart(data3)
