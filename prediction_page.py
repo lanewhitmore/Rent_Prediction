@@ -2,25 +2,25 @@ import streamlit as st
 import pickle
 import numpy as np
 
-
+### Showing prediction page function with title / subtitle
 def show_prediction_page():
     st.write("""## India Apartment & Home Rent Prediction""")
 
     st.write("""#### Calculate My Rent: """)
 
+    ### loading pickle final model
     def load_model():
         with open(r'OneDrive/Documents/Github/Rent_Prediction/model_labelencode.pkl', 'rb') as file:
             data = pickle.load(file)
         return data
 
     data = load_model()
-
+    ### Assign model and label encoders
     regressor = data['model']
     le_city = data['le_city']
     le_contact = data['le_contact']
 
-
-
+    ### Writing out categories for selector
     cities = (
         'Mumbai',
         'Chennai',
@@ -37,14 +37,11 @@ def show_prediction_page():
         'Contact Builder',
     )
 
-    furnish = (
-        'Semi-Furnished', 
-        'Unfurnished', 
-        'Furnished', 
-    )
+    
     with open('c:/Users/whitm/OneDrive/Documents/GitHub/Rent_Prediction\style.css') as f:
         st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
+    ### Creating selectors and sliders
     city = st.selectbox('Select Your Preferred City', cities)
     contacts = st.selectbox('Select How to Contact Landlord', contact)
 
@@ -53,7 +50,7 @@ def show_prediction_page():
     bathroom = st.slider('Select Preferred Bathroom Amount', min_value = 1, max_value = 10)
     floor = st.slider('Select Prefered Building Floor Total', min_value = -2, max_value = 150)
    
-
+    ### Creatng calculate button with model
     ok = st.button('Calculate Rent')
     if ok:
         X = np.array([[size, city, bathroom, floor, contacts, bhk]])

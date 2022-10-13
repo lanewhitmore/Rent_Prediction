@@ -1,9 +1,7 @@
-from re import X
 import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt
 
-
+### formulas from nb
 def clean_flooron(x):
     if 'Gr' in str(x[:2]):
         return 0
@@ -20,7 +18,7 @@ def clean_floortot(x):
     else:
         return str(x[-2:])
 
-
+### caching preprocessing 
 @st.cache
 def load_data():
     rent = pd.read_csv(r'C:\Users\whitm\OneDrive\Documents\GitHub\Rent_Prediction/House_Rent_Dataset.csv')
@@ -41,7 +39,7 @@ def load_data():
 
 df = load_data()
 
-
+### Showing consumers valuable charts
 def show_explore_page():
     st.write("## Explore Rent Prices in India")
 
