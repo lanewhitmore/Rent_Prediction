@@ -62,3 +62,4 @@ def show_prediction_page():
 
         rent = regressor.predict(X)
         st.write(f"#### The estimated rent is ₹{rent[0]:.2f}")
+        st.write(f"#### The estimated rent in USD is ${rent[0]*0.01214:.2f}")
