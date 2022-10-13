@@ -3,23 +3,25 @@ import pickle
 import numpy as np
 
 ## Showing prediction page function with title / subtitle
+
+
+    ### loading pickle final model
+def load_model():
+    with open(r'model_labelencode.pkl', 'rb') as file:
+        data = pickle.load(file)
+    return data
+
+data = load_model()
+
+    ### Assign model and label encoders
+regressor = data['model']
+le_city = data['le_city']
+le_contact = data['le_contact']
+
 def show_prediction_page():
     st.write("""## India Apartment & Home Rent Prediction""")
 
     st.write("""#### Calculate My Rent: """)
-
-    ### loading pickle final model
-    def load_model():
-        with open(r'model_labelencode.pkl', 'rb') as file:
-            data = pickle.load(file)
-        return data
-
-    data = load_model()
-    
-    ### Assign model and label encoders
-    regressor = data['model']
-    le_city = data['le_city']
-    le_contact = data['le_contact']
 
     ### Writing out categories for selector
     cities = (
