@@ -66,9 +66,9 @@ def show_explore_page():
         alt.Chart(data4)
         .mark_bar()
         .encode(
-            alt.X(data4.index:O),
+            alt.X('index:O'),
             alt.Y("Rent"),
-            alt.Color(data4.index:O),
+            alt.Color('index:O'),
             alt.Tooltip(["Bathroom", "Rent"]),
         )
         .interactive()
