@@ -51,7 +51,7 @@ def show_explore_page():
     )
     data = df.groupby(['City'])['City','Rent'].mean().round(2)
     data2 = df.groupby(['Point of Contact'])['Point of Contact','Rent'].mean().round(2)
-    data3 = df.groupby(['Posted On'])['Rent'].mean().round(2).sort_value(ascending = True)
+    data3 = df.groupby(['Posted On'])['Rent'].mean().round(2).sort_values(ascending = True)
     data4 = df.groupby(['Bathroom'])['Bathroom','Rent'].mean().round(2)
     data5 = df.groupby(['BHK'])['BHK','Rent'].mean().round(2)
 
