@@ -10,7 +10,7 @@ def show_prediction_page():
 
     ### loading pickle final model
     def load_model():
-        with open(r'OneDrive/Documents/Github/Rent_Prediction/model_labelencode.pkl', 'rb') as file:
+        with open(r'Github/Rent_Prediction/model_labelencode.pkl', 'rb') as file:
             data = pickle.load(file)
         return data
 
