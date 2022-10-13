@@ -49,26 +49,46 @@ def show_explore_page():
     #### MagicBricks India Household Rent Dataset (2022)
     """
     )
-    data = df.groupby(['City'])['Rent'].mean().round(2).sort_values(ascending=True)
-    data2 = df.groupby(['Point of Contact'])['Rent'].mean().round(2).sort_values(ascending=True)
-    data3 = df.groupby(['Posted On'])['Rent'].mean().round(2).sort_values(ascending=True)
-    data4 = df.groupby(['Bathroom'])['Rent'].mean().round(2).sort_values(ascending=True)
-    data5 = df.groupby(['BHK'])['BHK','Rent'].mean().round(2).sort_values(ascending=True, by='Rent')
+    data = df.groupby(['City'])['City','Rent'].mean().round(2
+    data2 = df.groupby(['Point of Contact'])['Point of Contact','Rent'].mean().round(2)
+    data3 = df.groupby(['Posted On'])['Rent'].mean().round(2).sort_value(ascending = True)
+    data4 = df.groupby(['Bathroom'])['Bathroom','Rent'].mean().round(2)
+    data5 = df.groupby(['BHK'])['BHK','Rent'].mean().round(2)
 
     st.write("""#### Average Cost of Rent by City""")
-    st.bar_chart(data)
+    chart = (
+        alt.Chart(data)
+        .mark_bar()
+        .encode(
+            alt.X('City'),
+            alt.Y("Rent"),
+            alt.Color('City', scale=alt.Scale(scheme='dark1')),
+            alt.Tooltip(["City", "Rent"]),
+        )
+        .interactive()
+    )
 
     st.write("""#### Average Cost of Rent by Point of Contact""")
-    st.bar_chart(data2)
+    chart = (
+        alt.Chart(data2)
+        .mark_bar()
+        .encode(
+            alt.X('Point of Contact'),
+            alt.Y("Rent"),
+            alt.Color('Point of Contact', scale=alt.Scale(scheme='dark1')),
+            alt.Tooltip(["Point of Contact", "Rent"]),
+        )
+        .interactive()
+    )
 
     st.write("""#### Average Cost of Rent by Bathroom Count""")
     chart = (
-        alt.Chart(df)
+        alt.Chart(data4)
         .mark_bar()
         .encode(
             alt.X('Bathroom'),
             alt.Y("Rent"),
-            alt.Color('Bathroom'),
+            alt.Color('Bathroom', scale=alt.Scale(scheme='dark1')),
             alt.Tooltip(["Bathroom", "Rent"]),
         )
         .interactive()
@@ -81,7 +101,7 @@ def show_explore_page():
         .encode(
             alt.X("BHK"),
             alt.Y("Rent"),
-            alt.Color("BHK", scale=alt.Scale(scheme='dark2')),
+            alt.Color("BHK", scale=alt.Scale(scheme='dark1')),
             alt.Tooltip(["BHK", "Rent"]),
         )
         .interactive()
