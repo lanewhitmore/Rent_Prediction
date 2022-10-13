@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 
-### formulas from nb
+## formulas from nb
 def clean_flooron(x):
     if 'Gr' in str(x[:2]):
         return 0

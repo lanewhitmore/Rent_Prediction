@@ -2,7 +2,7 @@ import streamlit as st
 import pickle
 import numpy as np
 
-### Showing prediction page function with title / subtitle
+## Showing prediction page function with title / subtitle
 def show_prediction_page():
     st.write("""## India Apartment & Home Rent Prediction""")
 
