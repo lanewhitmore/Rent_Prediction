@@ -66,9 +66,9 @@ def show_explore_page():
         alt.Chart(df)
         .mark_bar()
         .encode(
-            alt.X('Bathroom:O'),
+            alt.X('Bathroom'),
             alt.Y("Rent"),
-            alt.Color('Bathroom:O'),
+            alt.Color('Bathroom'),
             alt.Tooltip(["Bathroom", "Rent"]),
         )
         .interactive()
@@ -79,9 +79,9 @@ def show_explore_page():
         alt.Chart(data5)
         .mark_bar()
         .encode(
-            alt.X("BHK:O"),
+            alt.X("BHK"),
             alt.Y("Rent"),
-            alt.Color("BHK:0"),
+            alt.Color("BHK"),
             alt.Tooltip(["BHK", "Rent"]),
         )
         .interactive()
