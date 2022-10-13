@@ -67,6 +67,7 @@ def show_explore_page():
         )
         .interactive()
     )
+    st.altair_chart(chart)
 
     st.write("""#### Average Cost of Rent by Point of Contact""")
     chart = (
@@ -80,6 +81,7 @@ def show_explore_page():
         )
         .interactive()
     )
+    st.altair_chart(chart)
 
     st.write("""#### Average Cost of Rent by Bathroom Count""")
     chart = (
@@ -93,6 +95,7 @@ def show_explore_page():
         )
         .interactive()
     )
+    st.altair_chart(chart)
 
     st.write("""#### Average Cost of Rent by Bedroom + Kitchen + Hall Count""")
     chart = (
