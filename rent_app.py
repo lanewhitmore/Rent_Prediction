@@ -1,6 +1,6 @@
 import streamlit as st
-from prediction_page import show_prediction_page
 from explore_page import show_explore_page
+from prediction_page import show_prediction_page
 
 ## Open both pages with css style
 #with open('style.css') as f:
