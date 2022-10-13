@@ -21,7 +21,7 @@ def clean_floortot(x):
 ### caching preprocessing 
 @st.cache
 def load_data():
-    rent = pd.read_csv(r'GitHub/Rent_Prediction/House_Rent_Dataset.csv')
+    rent = pd.read_csv(r'House_Rent_Dataset.csv')
 
     rent['floor on'] = rent['Floor'].apply(clean_flooron)
     rent['floor total'] = rent['Floor'].apply(clean_floortot)

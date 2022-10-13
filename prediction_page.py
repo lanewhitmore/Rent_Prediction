@@ -10,7 +10,7 @@ def show_prediction_page():
 
     ### loading pickle final model
     def load_model():
-        with open(r'Github/Rent_Prediction/model_labelencode.pkl', 'rb') as file:
+        with open(r'model_labelencode.pkl', 'rb') as file:
             data = pickle.load(file)
         return data
 
@@ -38,7 +38,7 @@ def show_prediction_page():
     )
 
     
-    with open('c:/Users/whitm/OneDrive/Documents/GitHub/Rent_Prediction\style.css') as f:
+    with open('style.css') as f:
         st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
     ### Creating selectors and sliders
