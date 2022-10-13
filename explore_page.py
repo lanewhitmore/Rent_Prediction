@@ -64,7 +64,7 @@ def show_explore_page():
     st.bar_chart(data4)
 
     st.write("""#### Average Cost of Rent by Bedroom + Kitchen + Hall Count""")
-    st.bar_chart(data5)
+    st.bar_chart(data5, c = 'green')
 
     st.write("""#### Listings By Date in 2022""")
     st.line_chart(data3)
