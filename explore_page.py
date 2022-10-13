@@ -35,7 +35,7 @@ def load_data():
 
     rent[['floor on', 'floor total']] = rent[['floor on', 'floor total']].astype(int)
 
-    rent = rent[['Bathroom','Size','City','Furnishing Status','Rent','Posted On']]
+    rent = rent[['Bathroom','Size','City','Furnishing Status','Rent','Posted On','Point of Contact','BHK']]
 
     return rent
 
@@ -50,16 +50,23 @@ def show_explore_page():
     #### MagicBricks India Household Rent Dataset (2022)
     """
     )
-    data = df.groupby(['City'])['Rent'].mean().sort_values(ascending=True)
-    data2 = df.groupby(['Furnishing Status'])['Rent'].mean().sort_values(ascending=True)
-    data3 = df.groupby(['Posted On'])['Rent'].mean().sort_values(ascending=True)
+    data = df.groupby(['City'])['Rent'].mean().round(2).sort_values(ascending=True)
+    data2 = df.groupby(['Point of Contact'])['Rent'].mean().round(2).sort_values(ascending=True)
+    data3 = df.groupby(['Posted On'])['Rent'].mean().round(2).sort_values(ascending=True)
+    data4 = df.groupby(['Bathroom'])['Rent'].mean().round(2).sort_values(ascending=True)
+    data5 = df.groupby(['BHK'])['Rent'].mean().round(2).sort_values(ascending=True)
 
     st.write("""#### Average Cost of Rent by City""")
     st.bar_chart(data)
 
-
-    st.write("""#### Average Cost of Rent by Furnishing Status""")
+    st.write("""#### Average Cost of Rent by Point of Contact""")
     st.bar_chart(data2)
+
+    st.write("""#### Average Cost of Rent by Bathroom Count""")
+    st.bar_chart(data4)
+
+    st.write("""#### Average Cost of Rent by Bedroom + Kitchen + Hall Count""")
+    st.bar_chart(data5)
 
     st.write("""#### Listings By Date in 2022""")
     st.line_chart(data3)
