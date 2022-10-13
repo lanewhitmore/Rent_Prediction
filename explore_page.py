@@ -69,10 +69,10 @@ def show_explore_page():
         alt.Chart(data5)
         .mark_bar()
         .encode(
-            alt.X("Nucleotide:O"),
-            alt.Y("Similarities"),
-            alt.Color("Nucleotide:O"),
-            alt.Tooltip(["Nucleotide", "Similarities"]),
+            alt.X("BHK:O"),
+            alt.Y("Rent"),
+            alt.Color("BHK:O"),
+            alt.Tooltip(["BHK", "Rent"]),
         )
         .interactive()
     )
