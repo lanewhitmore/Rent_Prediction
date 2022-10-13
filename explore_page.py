@@ -63,12 +63,12 @@ def show_explore_page():
 
     st.write("""#### Average Cost of Rent by Bathroom Count""")
     chart = (
-        alt.Chart(df)
+        alt.Chart(data4)
         .mark_bar()
         .encode(
             alt.X(data4.index:O),
             alt.Y("Rent"),
-            alt.Color(data4.index:0),
+            alt.Color(data4.index:O),
             alt.Tooltip(["Bathroom", "Rent"]),
         )
         .interactive()
