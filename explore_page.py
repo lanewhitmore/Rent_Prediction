@@ -52,7 +52,7 @@ def show_explore_page():
     data = df.groupby(['City'])['Rent'].mean().round(2).sort_values(ascending=True)
     data2 = df.groupby(['Point of Contact'])['Rent'].mean().round(2).sort_values(ascending=True)
     data3 = df.groupby(['Posted On'])['Rent'].mean().round(2).sort_values(ascending=True)
-    data4 = df.groupby(['Bathroom'])['Bathroom','Rent'].mean().round(2).sort_values(ascending=True, by = 'Rent')
+    data4 = df.groupby(['Bathroom'])['Rent'].mean().round(2).sort_values(ascending=True)
     data5 = df.groupby(['BHK'])['Rent'].mean().round(2).sort_values(ascending=True)
 
     st.write("""#### Average Cost of Rent by City""")
@@ -66,9 +66,9 @@ def show_explore_page():
         alt.Chart(df)
         .mark_bar()
         .encode(
-            alt.X("Bathroom:O"),
+            alt.X(data4.index:O),
             alt.Y("Rent"),
-            alt.Color("Bathroom:0"),
+            alt.Color(data4.index:0),
             alt.Tooltip(["Bathroom", "Rent"]),
         )
         .interactive()
