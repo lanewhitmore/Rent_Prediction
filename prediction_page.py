@@ -15,6 +15,7 @@ def show_prediction_page():
         return data
 
     data = load_model()
+    
     ### Assign model and label encoders
     regressor = data['model']
     le_city = data['le_city']
