@@ -56,7 +56,7 @@ def show_explore_page():
     data5 = df.groupby(['BHK'])['BHK','Rent'].mean().round(2)
 
     st.write("""#### Average Cost of Rent by City""")
-    chart = (
+    chart1 = (
         alt.Chart(data)
         .mark_bar()
         .encode(
@@ -67,10 +67,10 @@ def show_explore_page():
         )
         .interactive()
     )
-    st.altair_chart(chart)
+    st.altair_chart(chart1)
 
     st.write("""#### Average Cost of Rent by Point of Contact""")
-    chart = (
+    chart2 = (
         alt.Chart(data2)
         .mark_bar()
         .encode(
@@ -81,10 +81,10 @@ def show_explore_page():
         )
         .interactive()
     )
-    st.altair_chart(chart)
+    st.altair_chart(chart2)
 
     st.write("""#### Average Cost of Rent by Bathroom Count""")
-    chart = (
+    chart3 = (
         alt.Chart(data4)
         .mark_bar()
         .encode(
@@ -95,10 +95,10 @@ def show_explore_page():
         )
         .interactive()
     )
-    st.altair_chart(chart)
+    st.altair_chart(chart3)
 
     st.write("""#### Average Cost of Rent by Bedroom + Kitchen + Hall Count""")
-    chart = (
+    chart4 = (
         alt.Chart(data5)
         .mark_bar()
         .encode(
@@ -109,7 +109,7 @@ def show_explore_page():
         )
         .interactive()
     )
-    st.altair_chart(chart)
+    st.altair_chart(chart4)
 
     st.write("""#### Listings By Date in 2022""")
     st.line_chart(data3)
