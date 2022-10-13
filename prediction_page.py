@@ -7,7 +7,7 @@ import numpy as np
 
     ### loading pickle final model
 def load_model():
-    with open(r'model_labelencode.pkl', 'rb') as file:
+    with open('model_labelencode.pkl', 'rb') as file:
         data = pickle.load(file)
     return data
 
