@@ -66,12 +66,12 @@ def show_explore_page():
 
     st.write("""#### Average Cost of Rent by Bedroom + Kitchen + Hall Count""")
     chart = (
-        alt.Chart(data5)
+        alt.Chart(df)
         .mark_bar()
         .encode(
-            alt.X("BHK:O"),
+            alt.X("BHK"),
             alt.Y("Rent"),
-            alt.Color("BHK:O"),
+            alt.Color("BHK"),
             alt.Tooltip(["BHK", "Rent"]),
         )
         .interactive()
