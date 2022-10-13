@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import altair as alt
 
 ## formulas from nb
 def clean_flooron(x):
@@ -49,67 +48,23 @@ def show_explore_page():
     #### MagicBricks India Household Rent Dataset (2022)
     """
     )
-    data = df.groupby(['City'])['City','Rent'].mean().round(2)
-    data2 = df.groupby(['Point of Contact'])['Point of Contact','Rent'].mean().round(2)
+    data = df.groupby(['City'])['Rent'].mean().round(2).sort_values(ascending = True)
+    data2 = df.groupby(['Point of Contact'])['Rent'].mean().round(2).sort_values(ascending = True)
     data3 = df.groupby(['Posted On'])['Rent'].mean().round(2).sort_values(ascending = True)
-    data4 = df.groupby(['Bathroom'])['Bathroom','Rent'].mean().round(2)
-    data5 = df.groupby(['BHK'])['BHK','Rent'].mean().round(2)
+    data4 = df.groupby(['Bathroom'])['Rent'].mean().round(2).sort_values(ascending = True)
+    data5 = df.groupby(['BHK'])['Rent'].mean().round(2).sort_values(ascending = True)
 
     st.write("""#### Average Cost of Rent by City""")
-    chart1 = (
-        alt.Chart(data)
-        .mark_bar()
-        .encode(
-            alt.X('City'),
-            alt.Y("Rent"),
-            alt.Color('City', scale=alt.Scale(scheme='dark2')),
-            alt.Tooltip(["City", "Rent"]),
-        )
-        .interactive()
-    )
-    st.altair_chart(chart1)
+    st.bar_chart(data)
 
     st.write("""#### Average Cost of Rent by Point of Contact""")
-    chart2 = (
-        alt.Chart(data2)
-        .mark_bar()
-        .encode(
-            alt.X('Point of Contact'),
-            alt.Y("Rent"),
-            alt.Color('Point of Contact', scale=alt.Scale(scheme='dark2')),
-            alt.Tooltip(["Point of Contact", "Rent"]),
-        )
-        .interactive()
-    )
-    st.altair_chart(chart2)
+    st.bar_chart(data2)
 
     st.write("""#### Average Cost of Rent by Bathroom Count""")
-    chart3 = (
-        alt.Chart(data4)
-        .mark_bar()
-        .encode(
-            alt.X('Bathroom'),
-            alt.Y("Rent"),
-            alt.Color('Bathroom', scale=alt.Scale(scheme='dark2')),
-            alt.Tooltip(["Bathroom", "Rent"]),
-        )
-        .interactive()
-    )
-    st.altair_chart(chart3)
+    st.bar_chart(data4)
 
     st.write("""#### Average Cost of Rent by Bedroom + Kitchen + Hall Count""")
-    chart4 = (
-        alt.Chart(data5)
-        .mark_bar()
-        .encode(
-            alt.X("BHK"),
-            alt.Y("Rent"),
-            alt.Color("BHK", scale=alt.Scale(scheme='dark2')),
-            alt.Tooltip(["BHK", "Rent"]),
-        )
-        .interactive()
-    )
-    st.altair_chart(chart4)
+    st.bar_chart(data5)
 
     st.write("""#### Listings By Date in 2022""")
     st.line_chart(data3)
