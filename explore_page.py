@@ -62,7 +62,7 @@ def show_explore_page():
         .encode(
             alt.X('City'),
             alt.Y("Rent"),
-            alt.Color('City', scale=alt.Scale(scheme='dark1')),
+            alt.Color('City', scale=alt.Scale(scheme='dark2')),
             alt.Tooltip(["City", "Rent"]),
         )
         .interactive()
@@ -75,7 +75,7 @@ def show_explore_page():
         .encode(
             alt.X('Point of Contact'),
             alt.Y("Rent"),
-            alt.Color('Point of Contact', scale=alt.Scale(scheme='dark1')),
+            alt.Color('Point of Contact', scale=alt.Scale(scheme='dark2')),
             alt.Tooltip(["Point of Contact", "Rent"]),
         )
         .interactive()
@@ -88,7 +88,7 @@ def show_explore_page():
         .encode(
             alt.X('Bathroom'),
             alt.Y("Rent"),
-            alt.Color('Bathroom', scale=alt.Scale(scheme='dark1')),
+            alt.Color('Bathroom', scale=alt.Scale(scheme='dark2')),
             alt.Tooltip(["Bathroom", "Rent"]),
         )
         .interactive()
@@ -101,7 +101,7 @@ def show_explore_page():
         .encode(
             alt.X("BHK"),
             alt.Y("Rent"),
-            alt.Color("BHK", scale=alt.Scale(scheme='dark1')),
+            alt.Color("BHK", scale=alt.Scale(scheme='dark2')),
             alt.Tooltip(["BHK", "Rent"]),
         )
         .interactive()
