@@ -50,7 +50,7 @@ def show_prediction_page():
     size = st.slider('Select Preferred Size in Square Feet', min_value = 10, max_value = 10000)
     bhk = st.slider('Select Preferred Bedroom / Hall / Kitchen Amount', min_value = 1, max_value = 30)
     bathroom = st.slider('Select Preferred Bathroom Amount', min_value = 1, max_value = 10)
-    floor = st.slider('Select Prefered Building Floor Total', min_value = -2, max_value = 150)
+    floor = st.slider('Select Prefered Building Floor Total', min_value = 0, max_value = 150)
    
     ### Creatng calculate button with model
     ok = st.button('Calculate Rent')
