@@ -37,6 +37,10 @@ CSS
 
 The dataset has been acquired from MagicBricks. It contains 4,747 records that includes 11 variables; time of listing y/m/d, bedroom + hall + kitchen, rent, size, floor, area type, area locality, city, furnishing status, tenant preferred, bathroom, and point of contact. For the purposes of the business objective, rent will be our dependent variable and regression techniques will be used to predict it. The primary concerns or questions will be: how accurate of a model can we create? Which regression technique will that be? What percentage of error will such a model have? What dollar and rupee amount will that error be? The primary roadblock to finding a successful regression model will be the dataset size limitatiions. After splitting the training and test set the models may be limited by training size. 
 
+## Reference
+
+Banerjee, S. (2022, August 20). House Rent Prediction Dataset. Kaggle. Retrieved October 12, 2022, from https://www.kaggle.com/datasets/iamsouravbanerjee/house-rent-prediction-dataset?select=House_Rent_Dataset.csv
+
 ## Acknowledgments
 
 A special thank you to Program Director Dr. Tarshizi and Professor Malin for their help and guidance.
